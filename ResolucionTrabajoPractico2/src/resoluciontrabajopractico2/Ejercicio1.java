@@ -5,26 +5,28 @@ import java.util.Scanner;
 
 
 public class Ejercicio1 {
-
-    static void ejecutar()  {
-        try ( // Objeto Scanner para leer la entrada del usuario
-                Scanner scanner = new Scanner(System.in)) {
-            System.out.print("Ingrese un año: ");
-            int anio = scanner.nextInt();
-            
-            boolean esBisiesto;
-            
-            // Estructura condicional (IF/ELSE) con operadores lógicos
-            // La condición aplica la regla: (Divisible por 4 Y NO por 100) O (Divisible por 400)
-            esBisiesto = (anio % 4 == 0 && anio % 100 != 0) || (anio % 400 == 0);
-            
-            if (esBisiesto) {
-                System.out.println("El año " + anio + " es bisiesto."); // Ejemplo: 2024 [cite: 30]
-            } else {
-                System.out.println("El año " + anio + " no es bisiesto."); // Ejemplo: 1900 [cite: 32]
-            }
+ 
+    /**
+     *
+     */
+    public static void ejecutar(){
+    
+        // Declaramos input para leer los datos
+        Scanner input = new Scanner(System.in);
+        int anio; // Declaramos la variable anio, es donde vamos a guardar el valor ingresado por el usuario
+        
+        // Le pedimos el valor al usuario
+        System.out.println("Ingrese un año para verficar si es bisiesto");
+        anio = Integer.parseInt(input.nextLine());
+        
+        // Verificamos en el condicional que sea divisible por 4 y no por 100 a excepcion que el año tambien sea divisible por 400.
+        if((anio % 4 == 0 && anio % 100 != 0) || (anio % 400 == 0)){
+            System.out.println("El año " + anio + " es bisiesto");
+        } else {
+            System.out.println("El año " + anio + " no es bisiesto");
         }
+            
     }
 
-}
-
+    
+    }
